@@ -23,9 +23,21 @@
 </head>
 
 <body class="flex h-screen w-full">
-`
+    `
     <!-- section for side bar -->
-    <aside class="py-4 md:py-8 px-4 flex-row md:flex-col items-center md:h-full fixed md:flex bottom-0 bg-white z-10 w-full md:w-auto justify-center">
+    <aside
+        class="py-4 md:py-8 px-4 flex-row md:flex-col items-center md:h-full fixed md:flex bottom-0 bg-white z-10 w-full md:w-auto justify-center">
+        <nav class="block md:hidden fixed w-full top-0 left-0">
+            <div class="w-full bg-white p-2 flex justify-end">
+                <div class="relative w-14">
+                    <span
+                        class="material-symbols-outlined text-gray-400 hover:bg-gray-200 p-3 rounded-lg cursor-pointer transition after:absolute after:top-1 after:right-1 after:bg-green-500 after:h-2.5 after:w-2.5 after:rounded-full ">notifications</span>
+
+                </div>
+
+            </div>
+
+        </nav>
         <div class="flex flex-row md:flex-col h-full w-full  flex-between">
             <div class="h-full w-full">
                 <div class="flex flex-row md:flex-col items-center gap-7 mb-20 hidden md:block
@@ -64,7 +76,7 @@
     </aside>
 
     <!-- section for main content -->
-    <main class="flex flex-col md:flex-row w-full">
+    <main class="flex flex-col lg:flex-row w-full">
         <section class="md:bg-gray-100 pt-14 px-6 md:px-14 flex flex-col gap-16 h-full max-w-[500px] w-full">
             <div class="flex items-center gap-6">
                 <img src="../assets/avatarimage.jpg" alt
@@ -136,7 +148,7 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full mb-10">
+            <div class="w-full flex flex-col justify-center mb-10">
                 <h3 class="font-semibold mb-3">Contributions Overtime</h3>
                 <div class="flex justify-between">
                     <div class="flex flex-col md:flex-row gap-3 items-center ">
@@ -155,7 +167,7 @@
                         <p class="font-semibold ">K 244,313</p>
                     </div>
                 </div>
-                <div class="w-full relative mt-6">
+                <div class="w-full  relative mt-6">
                     <canvas id="chart"></canvas>
                 </div>
             </div>
@@ -213,19 +225,19 @@
                     <div class="flex flex-col gap-3">
                         <h3 class="text-md font-semibold">Employee Contribution</h3>
                         <div class="flex gap-6 justify-between items-center">
-                            <input type="range" class="range-field w-full" min="0" max="20" step="1" value="12" id="rangeInput">
+                            <input type="range" class="range-field w-full" min="0" max="20" step="1" value="12"
+                                id="rangeInput">
                             <span
-                                class="text-lg font-semibold bg-white p-2 rounded-lg w-14 flex justify-center items-center"
-                                >12%</span>
+                                class="text-lg font-semibold bg-white p-2 rounded-lg w-14 flex justify-center items-center">12%</span>
                         </div>
                     </div>
                     <div class="flex flex-col gap-3">
                         <h3 class="text-md font-semibold">Retirement Age</h3>
                         <div class="flex gap-6 justify-between items-center">
-                            <input type="range" class="range-field w-full" min="0" max="100" step="1" value="65" id="rangeInput">
+                            <input type="range" class="range-field w-full" min="0" max="100" step="1" value="65"
+                                id="rangeInput">
                             <span
-                                class="text-lg font-semibold bg-white p-2 rounded-lg w-14 flex justify-center items-center"
-                                >65</span>
+                                class="text-lg font-semibold bg-white p-2 rounded-lg w-14 flex justify-center items-center">65</span>
 
                         </div>
                     </div>
