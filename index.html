@@ -5,12 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- including cdn links for chart.js , tailwindcss , and google material icons -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
+
+
+    <!-- internal style sheet -->
     <style>
+        /* style for oultined google material icons */
         .material-symbols-outlined {
             font-variation-settings:
                 'FILL' 0,
@@ -22,12 +28,13 @@
 
 </head>
 
-<body class="flex h-screen w-full">
-    `
-    <!-- section for side bar -->
+
+<body class="flex w-full min-h-screen">
+
+    <!-- sematic aside component for the responsive sidebar and nav -->
     <aside
-        class="py-4 md:py-8 px-4 flex-row md:flex-col items-center md:h-full fixed md:flex bottom-0 bg-white z-10 w-full md:w-auto justify-center">
-        <nav class="block md:hidden fixed w-full top-0 left-0">
+        class="py-4 md:py-8 px-4 flex-row md:flex-col items-center md:h-full fixed md:sticky-0 md:top-0 md:flex bottom-0 bg-white z-10 w-full md:w-auto justify-center">
+        <nav class="block md:hidden fixed w-full top-0 left-0 shadow-lg shadow-gray-100">
             <div class="w-full bg-white p-2 flex justify-end">
                 <div class="relative w-14">
                     <span
@@ -38,17 +45,17 @@
             </div>
 
         </nav>
-        <div class="flex flex-row md:flex-col h-full w-full  flex-between">
+        <div class="flex flex-row md:flex-col h-full w-full flex-between">
             <div class="h-full w-full">
-                <div class="flex flex-row md:flex-col items-center gap-7 mb-20 hidden md:block
-                hidden md:block">
-                    <img src="./assets/logo_image.png" class="w-[40px] h-[40px] cursor-pointer " />
+                <div class="flex flex-col items-center justify-center gap-12 mb-20 hidden md:block">
+                    <img src="./assets/logo_image.png" class="w-[40px] h-[40px] mb-3 cursor-pointer hover:scale " />
                     <span
                         class=" material-symbols-outlined text-gray-400 hover:bg-gray-200 p-3 rounded-lg cursor-pointer transition">search</span>
 
                 </div>
                 <div class="flex flex-row md:flex-col items-center justify-between gap-7 px-8 md:px-0">
-                    <span class="material-symbols-outlined bg-blue-700 text-white p-3 rounded-lg">
+                    <span
+                        class="material-symbols-outlined bg-blue-700 text-white p-3 rounded-lg shadow-xl cursor-pointer">
                         home
                     </span>
                     <span
@@ -75,65 +82,72 @@
         </div>
     </aside>
 
-    <!-- section for main content -->
-    <main class="flex flex-col lg:flex-row w-full">
-        <section class="md:bg-gray-100 pt-14 px-6 md:px-14 flex flex-col gap-16 h-full max-w-[500px] w-full">
-            <div class="flex items-center gap-6">
-                <img src="../assets/avatarimage.jpg" alt
-                    class="rounded-full w-[80px] h-[80px] object-cover shadow-2xl shadow-gray-500" />
-                <div>
-                    <h4 class="text-4xl font-semibold text-gray-800">Hi
-                        Mike,</h4>
-                    <p class="text-gray-500">Welcome back.</p>
+    <!-- section for main content divided into three main sections -->
+    <main class="flex pt-6 md:pt-0 flex-col xl:flex-row w-full">
 
+        <!-- left section -->
+        <section class="xl:bg-gray-100 pt-14 px-6 xl:pl-28 2xl:px-28 xl:max-w-[600px] w-full ">
+            <div class="w-full 2xl:w-4/5 max-w-[650px] flex flex-col gap-16 mx-auto ">
+                <div class="flex items-center gap-6 ">
+                    <img src="../assets/avatarimage.jpg" alt="avatarimage"
+                        class="rounded-full w-[80px] h-[80px] object-cover shadow-2xl shadow-gray-300" />
+                    <div>
+                        <h4 class="text-4xl font-semibold text-gray-800">Hi
+                            Mike,</h4>
+                        <p class="text-gray-500">Welcome back.</p>
+
+                    </div>
                 </div>
-            </div>
-            <div class="bg-gray-100 md:bg-none p-6 md:p-0 rounded-2xl">
-                <h3 class="text-lg font-semibold mb-6">Today</h3>
-                <div class="mb-6">
-                    <h2 class="text-3xl font-bold">$19,892</h2>
-                    <p class="text-gray-500">Account Balance</p>
+                <div class="bg-gray-100 xl:bg-transparent p-6 xl:p-0 rounded-2xl">
+                    <h3 class="text-lg font-semibold mb-6">Today</h3>
+                    <div class="mb-6">
+                        <h2 class="text-3xl font-bold">$19,892</h2>
+                        <p class="text-gray-500">Account Balance</p>
+                    </div>
+                    <div class="mb-6">
+                        <h2 class="text-xl font-bold">$4,000</h2>
+                        <p class="text-gray-500">Year-to-date contributions</p>
+                    </div>
+                    <div class="mb-6">
+                        <h2 class="text-xl font-bold">$1,892</h2>
+                        <p class="text-gray-500">Total interests</p>
+                    </div>
+                    <button
+                        class="bg-blue-700 w-full md:auto flex items-center justify-center text-white py-4 px-7 rounded-lg hover:bg-blue-500 transition max-w-[200px]">
+                        <span>I want to</span>
+                        <span class="material-symbols-outlined">arrow_drop_down</span>
+                    </button>
                 </div>
-                <div class="mb-6">
-                    <h2 class="text-xl font-bold">$4,000</h2>
-                    <p class="text-gray-500">Year-to-date contributions</p>
-                </div>
-                <div class="mb-6">
-                    <h2 class="text-xl font-bold">$1,892</h2>
-                    <p class="text-gray-500">Total interests</p>
-                </div>
-                <button
-                    class="bg-blue-700 w-full md:auto flex items-center justify-center text-white py-4 px-7 rounded-lg hover:bg-blue-500 transition">
-                    <span>I want to</span>
-                    <span class="material-symbols-outlined">arrow_drop_down</span>
-                </button>
-            </div>
-            <div class="bg-gray-100 md:bg-none p-6 md:p-0 rounded-2xl">
-                <h3 class="text-lg font-semibold mb-6">Recent transactions</h3>
-                <div class="pb-6 mb-6 border-b border-gray-300">
-                    <h4 class="text-gray-500 mb-2">2020-08-07</h4>
-                    <p class="text-sm font-bold">Withdrawal Transter to
-                        Bank-XXX11</p>
-                </div>
-                <div class="pb-6 mb-6 border-b border-gray-300">
-                    <h4 class="text-gray-500 mb-2">2020-07-21</h4>
-                    <p class="text-sm font-bold">Withdrawal Transter to
-                        Bank-XXX11</p>
-                </div>
-                <div class="pb-6 mb-6 border-b border-gray-300">
-                    <h4 class="text-gray-500 mb-2">2020-07-16</h4>
-                    <p class="text-sm font-bold">Withdrawal Transter to
-                        Bank-XXX11</p>
+                <div class="bg-gray-100 xl:bg-transparent p-6 xl:p-0 rounded-2xl">
+                    <h3 class="text-lg font-semibold mb-6">Recent transactions</h3>
+                    <div class="pb-6 mb-6 border-b border-gray-300">
+                        <h4 class="text-gray-500 mb-2">2020-08-07</h4>
+                        <p class="text-sm font-bold">Withdrawal Transter to
+                            Bank-XXX11</p>
+                    </div>
+                    <div class="pb-6 mb-6 border-b border-gray-300">
+                        <h4 class="text-gray-500 mb-2">2020-07-21</h4>
+                        <p class="text-sm font-bold">Withdrawal Transter to
+                            Bank-XXX11</p>
+                    </div>
+                    <div class="pb-6 mb-6 border-b border-gray-300">
+                        <h4 class="text-gray-500 mb-2">2020-07-16</h4>
+                        <p class="text-sm font-bold">Withdrawal Transter to
+                            Bank-XXX11</p>
+                    </div>
                 </div>
             </div>
 
         </section>
-        <section class="px-6 md:px-28 pt-14 flex-grow w-full">
-            <div class="w-full mb-10">
+
+        <!-- middle section -->
+
+        <section class="px-6 md:px-2/5 pt-14 flex-grow w-full mx-auto">
+            <div class="w-full mx-auto max-w-[650px] xl:max-w-[700px] mb-16">
                 <h3 class="text-blue-500 text-md font-semibold mb-2">Retirement
                     income</h3>
                 <h2 class="font-semibold text-xl">Starting year 2056</h2>
-                <div class="flex gap-7 justify-between flex-wrap w-full items-center mt-10">
+                <div class="flex gap-7 justify-between flex-col md:flex-row w-full items-center mt-10">
                     <div class="border-b-[3px] border-blue-500 w-full pb-4 flex flex-col gap-2">
                         <h2 class="text-3xl font-bold">$300,000</h2>
                         <p class="text-sm text-gray-400">My Goal</p>
@@ -148,7 +162,7 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full flex flex-col justify-center mb-10">
+            <div class="w-full mx-auto max-w-[650px] xl:max-w-[700px] flex flex-col justify-center mb-16">
                 <h3 class="font-semibold mb-3">Contributions Overtime</h3>
                 <div class="flex justify-between">
                     <div class="flex flex-col md:flex-row gap-3 items-center ">
@@ -167,17 +181,17 @@
                         <p class="font-semibold ">K 244,313</p>
                     </div>
                 </div>
-                <div class="w-full  relative mt-6">
+                <div class="w-full relative mt-6">
                     <canvas id="chart"></canvas>
                 </div>
             </div>
-            <div>
+            <div class="w-full max-w-[650px] xl:max-w-[700px] mx-auto">
                 <h3 class="font-semibold mb-3">How do I compare with my
                     peers</h3>
                 <p class="text-sm text-gray-400">These numbers represent
                     current goal achievement</p>
                 <div class="flex flex-col md:flex-row w-full gap-4 md:gap-16 mt-10">
-                    <div class="flex flex-col gap-4 w-full md:max-w-[200px]">
+                    <div class="flex flex-col gap-4 w-full md:min-w-[200px] md:max-w-[200px]">
                         <h3 class="font-semibold text-sm flex items-center border-b border-gray-200 pb-4">Age
                             :&nbsp;<span class="text-gray-500 flex items-center">Under
                                 30 <span class="material-symbols-outlined">arrow_drop_down</span></span></h3>
@@ -189,7 +203,7 @@
                                 <span class="material-symbols-outlined">arrow_drop_down</span></span></h3>
 
                     </div>
-                    <div class="flex gap-10 justify-center">
+                    <div class="flex  gap-10 justify-center">
                         <div class="w-[100px] relative">
                             <canvas id="myChart1"></canvas>
                             <h2
@@ -218,8 +232,11 @@
 
             </div>
         </section>
-        <section class="md:px-20 pt-14 w-full md:max-w-[550px]">
-            <div class="bg-gray-100 p-10 md:max-w-[400px] flex flex-col gap-6 rounded-[40px] md:rounded-2xl">
+
+        <!-- right section -->
+
+        <section class="pt-14 pb-36 w-full mx-auto max-w-[650px] xl:max-w-[500px]">
+            <div class="bg-gray-100 p-10 xl:max-w-[400px] flex flex-col gap-6 rounded-[40px] md:rounded-2xl">
                 <div class="flex flex-col gap-3 pb-6 border-b-[3px] border-gray-200">
                     <h3 class="text-xl font-bold mb-8">Retirement strategy</h3>
                     <div class="flex flex-col gap-3">
@@ -265,6 +282,9 @@
         </section>
 
     </main>
+
+    <!-- including the script to implement the bar and percentage charts -->
+
     <script src="script.js" defer></script>
 </body>
 

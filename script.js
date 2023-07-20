@@ -1,6 +1,5 @@
-//bar chart
-
-const data = {
+//bar chart dummy data
+const bardata = {
   labels: ['20', '25' , '30' , '35' , '40' , '45' , '50' , '55' , '60' , '65' , '70' , '75' , '80' , '85'],
   datasets: [
     {
@@ -26,7 +25,7 @@ const data = {
   ],
 };
 
-// Chart configuration
+// bar chart configuration
 const config = {
   type: 'bar',
   data: data,
@@ -60,11 +59,10 @@ const config = {
   },
 };
 
-// Create the chart (bar chart)
+// Create the chart (bar chart) 
 const myChart = new Chart(document.getElementById('chart'), config);
 
-//pie chart with percentage
-
+// function for percentage chart configurations
 const createPieConfig = (data) => {
   return {
     type: 'doughnut',
@@ -75,17 +73,17 @@ const createPieConfig = (data) => {
       }]
     },
     options: {
-      cutout: '80%',
+      cutout: '70%',
     }
   };
 };
 
-// Chart data
+// percentage chart data 
 const pieChartData1 = [78, 22];
 const pieChartData2 = [95, 5];
 const pieChartData3 = [59, 41];
 
-// Create the charts
+// Create the charts 3 percentage charts
 const pieChart1 = new Chart(document.getElementById('myChart1'), createPieConfig(pieChartData1));
 const pieChart2 = new Chart(document.getElementById('myChart2'), createPieConfig(pieChartData2));
 const pieChart3 = new Chart(document.getElementById('myChart3'), createPieConfig(pieChartData3));
